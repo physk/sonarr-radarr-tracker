@@ -1,0 +1,5 @@
+<?php
+
+$domain = "";
+$radarrAPI = "";
+$sonarrAPI = "";
