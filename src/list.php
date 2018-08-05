@@ -1,5 +1,5 @@
 <?php
-include("./config/config.php");
+include("config/config.php");
 //sonarr
 $api = file_get_contents("https://sonarr.".$domain."/api/series?apikey=".$sonarrAPI);
 $json = json_decode($api);

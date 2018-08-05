@@ -1,5 +1,9 @@
 <?php
 include("config/config.php");
+if ($siteName == "CHANGEME")
+{
+        echo "Please edit /opt/appdata/tracker/config.php and set your site name";
+}
 ?>
 <!doctype html>
 <html lang="en">

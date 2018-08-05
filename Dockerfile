@@ -1,6 +1,7 @@
 FROM php:7.2.8-fpm-alpine
 
-LABEL maintainer="Ric Harvey <ric@ngd.io>"
+LABEL maintainer="PhysK <chris@physk.co.uk>"
+LABEL basedfrom="Ric Harvey <ric@ngd.io> - nginx-php-fpm"
 
 ENV php_conf /usr/local/etc/php-fpm.conf
 ENV fpm_conf /usr/local/etc/php-fpm.d/www.conf
@@ -270,7 +271,8 @@ ADD errors/ /var/www/errors
 
 RUN mkdir -p /etc/periodic/everymin
 RUN echo "#!/bin/sh" >> /etc/periodic/everymin/list
-RUN echo "php /var/www/html/list.php" >> /etc/periodic/everymin/list
+RUN echo "php /var/www/html/list.php >> /var/log/cron.list.log 2>&1" >> /etc/periodic/everymin/list
+RUN chmod +x /etc/periodic/everymin/list
 RUN echo "* * * * * run-parts /etc/periodic/everymin" >> /etc/crontabs/root 
 EXPOSE 443 80
 
