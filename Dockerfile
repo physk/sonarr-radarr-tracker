@@ -268,7 +268,10 @@ RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push && chmod 755 /usr/bin/let
 ADD src/ /var/www/html/
 ADD errors/ /var/www/errors
 
-
+RUN mkdir -P /etc/periodic/everymin
+RUN echo "#!/bin/sh" >> /etc/periodic/everymin/list
+RUN echo "php /var/www/html/list.php" >> /etc/periodic/everymin/list
+RUN echo "* * * * * run-parts /etc/periodic/everymin" >> /etc/crontabs/root 
 EXPOSE 443 80
 
 WORKDIR "/var/www/html"
