@@ -32,8 +32,6 @@ foreach($json as $show=>$val) {
 			$array[$val->titleSlug]["grabbed"] = false;
 			if($record->movieId == $val->id)
 			{
-				//print_r($record);
-				echo $record->eventType.PHP_EOL;
 				if($record->eventType == "grabbed")
 				{
 					$array[$val->titleSlug]["grabbed"] = true;
