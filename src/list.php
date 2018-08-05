@@ -1,5 +1,13 @@
 <?php
-include("config/config.php");
+if(file_exists("config/config.php"))
+{
+        include("config/config.php");
+}
+else {
+        echo "Config File not found";
+        exit();
+}
+
 //sonarr
 $api = file_get_contents("https://sonarr.".$domain."/api/series?apikey=".$sonarrAPI);
 $json = json_decode($api);

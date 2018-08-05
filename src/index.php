@@ -1,6 +1,14 @@
 <?php
-include("config/config.php");
-if ($siteName == "CHANGEME")
+if(file_exists("config/config.php"))
+{
+        include("config/config.php");
+}
+else {
+        echo "Config File not found";
+        exit();
+}
+
+if ($siteName == "SITENAME")
 {
         echo "Please edit /opt/appdata/tracker/config.php and set your site name";
 }

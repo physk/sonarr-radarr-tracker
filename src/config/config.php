@@ -1,6 +1,6 @@
 <?php
 
-$domain = "";
-$siteName = "";
-$radarrAPI = "";
-$sonarrAPI = "";
+$domain = "DOAMIN";
+$siteName = "SITENAME";
+$radarrAPI = "SONARRAPI";
+$sonarrAPI = "RADARRAPI";
