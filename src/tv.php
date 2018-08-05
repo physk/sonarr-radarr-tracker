@@ -89,12 +89,16 @@ foreach($json as $key=>$val)
 	<?php
 			foreach($json as $show=>$vals)
 			{
-				$colour = "";
-				$percent = ($vals->got / $vals->total) * 100;
+                $colour = "";
+                if($vals->total >= 1)
+                {
+                    $percent = ($vals->got / $vals->total) * 100;
+                }
+                else {
+                    $percent = 0;
+                }
+				
 				$percent = number_format($percent, 2, ".", ",");
-				if($percent == "nan"){
-					$percent = 0;
-				}
 				if($percent == 100)	{
 					$colour = "bg-success";
 				} elseif(($percent < 100) && ($percent > 50)) {
