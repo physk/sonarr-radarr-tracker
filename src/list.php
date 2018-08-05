@@ -1,7 +1,7 @@
 <?php
-if(file_exists("config/config.php"))
+if(file_exists("/var/www/html/config/config.php"))
 {
-        include("config/config.php");
+        include("/var/www/html/config/config.php");
 }
 else {
         echo "Config File not found".PHP_EOL;

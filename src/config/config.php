@@ -2,5 +2,5 @@
 
 $domain = "DOMAIN";
 $siteName = "SITENAME";
-$radarrAPI = "SONARRAPI";
-$sonarrAPI = "RADARRAPI";
+$radarrAPI = "RADARRAPI";
+$sonarrAPI = "SONARRAPI";
