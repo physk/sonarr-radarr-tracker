@@ -1,6 +1,13 @@
 <?php
-$fp = file_get_contents("/var/www/html/radarr.json");
-$json = json_decode($fp);
+if(file_exists()) {
+    $fp = file_get_contents("/var/www/html/radarr.json");
+    $json = json_decode($fp);
+}
+else {
+    echo "Error grabbing JSON file, if this is the first boot of the container it may take a minuite to grab the data!";
+    exit();
+}
+
 function mySort($a, $b) {
   return strnatcmp($a->title, $b->title);
 }

@@ -1,6 +1,13 @@
 <?php
-$fp = file_get_contents("/var/www/html/sonarr.json");
-$json = json_decode($fp);
+if(file_exists("/var/www/html/sonarr.json"))
+{
+    $fp = file_get_contents("/var/www/html/sonarr.json");
+    $json = json_decode($fp); 
+}
+else {
+    echo "Error grabbing JSON file, if this is the first boot of the container it may take a minuite to grab the data!";
+    exit();
+}
 $showcount = 0;
 foreach($json as $key=>$val)
 {
