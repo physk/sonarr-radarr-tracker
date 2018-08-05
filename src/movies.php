@@ -1,5 +1,5 @@
 <?php
-if(file_exists()) {
+if(file_exists("/var/www/html/radarr.json")) {
     $fp = file_get_contents("/var/www/html/radarr.json");
     $json = json_decode($fp);
 }
