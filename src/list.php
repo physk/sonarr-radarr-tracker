@@ -24,7 +24,7 @@ unset($array);
 //radarr
 $api = file_get_contents("https://radarr.".$domain."/api/movie?apikey=".$radarrAPI);
 $json = json_decode($api);
-$api = file_get_contents("https://radarr.".$domain."/api/history?page=1&pageSize=4000&sortKey=movie.title&apikey=".$radarrAPI);
+$api = file_get_contents("https://radarr.".$domain."/api/history?page=1&pageSize=400000&sortKey=movie.title&apikey=".$radarrAPI);
 $history = json_decode($api);
 foreach($json as $show=>$val) {
 	$title = str_replace(" ", "_", $val->sortTitle);
