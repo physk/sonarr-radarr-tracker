@@ -148,7 +148,6 @@ foreach($json as $key=>$val)
                 echo "    <td>".PHP_EOL;
                 echo "        <div class=\"progress episode-progress ".$colour."\"\">".PHP_EOL;
                 echo "            <span class=\"progressbar-back-text\">".$quality."</span>".PHP_EOL;
-                echo "            </div>".PHP_EOL;
                 echo "        </div>".PHP_EOL;
                 echo "    </td>".PHP_EOL;
                 echo "</tr>".PHP_EOL;
