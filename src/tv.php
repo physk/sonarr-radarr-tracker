@@ -2,7 +2,11 @@
 if(file_exists("/var/www/html/sonarr.json"))
 {
     $fp = file_get_contents("/var/www/html/sonarr.json");
-    $json = json_decode($fp); 
+    $json = json_decode($fp);
+    if($json == null){
+        echo "Error with JSON files check you have the correct URL and Sonarr API key in /opt/appdata/pgtracker/config.php";
+        exit();
+    }
 }
 else {
     echo "Error grabbing JSON file, if this is the first boot of the container it may take a minuite to grab the data!";

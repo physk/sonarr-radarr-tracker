@@ -8,7 +8,7 @@ else {
         exit();
 }
 
-if ($siteName == "SITENAME")
+if ($siteName == "SITENAME" || $siteName == "")
 {
         echo "Please edit /opt/appdata/tracker/config.php and set your site name";
 }
