@@ -3,30 +3,30 @@ $(document).ready(function() {
         var searchDOM = [];
         
         $.each( data.items, function( i, item ) {
-            if(item.got == true){
-                var colour = "bg-success";
-                var quality = item.quality;
+            if(item.total >= 1){
+                var percent = (itam.got / item.total) * 100;
+            } else {
+                var percent = 0;
             }
-            else {
-                if(item.grabbed == true){
-                    var colour = "bg-warning";
-                    var quality = "In Download Queue";
-                }
-                else {
-                    var colour = "bg-danger";
-                    var quality = "Not Found Download/Not Available Yet";
-                }
+            var percent = percent.toFixed(2);
+            if(percent == 100) {
+                var colour = "bg-success";
+            } else if (percent < 100 && percent > 50) {
+                var colour = "bg-warning";
+            } else {
+                var colour = "bg-danger";
             }
             searchDOM.push("<tr>");
             searchDOM.push("    <td>" + item.title + "</td>");
-            searchDOM.push("<td>");
-            searchDOM.push("<span class=\"badge badge-primary\"><a href=\"https://www.imdb.com/title/"+ item.imdbId + "/\">IMDB</a></span>");
-            searchDOM.push("<span class=\"badge badge-primary\"><a href=\"https://www.themoviedb.org/movie/" + item.tmdbId + "\">TMDB</a></span>")
             searchDOM.push("    <td>");
             searchDOM.push("        <div class=\"progress episode-progress\">");
-            searchDOM.push("            <span class=\"progressbar-back-text " + colour + "\">"+ quality + "</span>");
+            searchDOM.push("            <span class=\"progressbar-back-text\">"+ item.got + " / " + item.total + "</span>");
+            searchDOM.push("            <div class=\"progress-bar " + colour + "\" role=\"progressbar\" style=\"width:" + percent + "%\" aria-valuenow=\"" + percent + "\" aria-valuemin=\"0\" aria-valuemax=\"100\">");
+            searchDOM.push("                <span class=\"progressbar-front-text\">"+ item.got + " / " + item.total + "</span>");
+            searchDOM.push("            </div>");
             searchDOM.push("        </div>");
             searchDOM.push("    </td>");
+            searchDOM.push("    <td>" + percent + "%</td>");
             searchDOM.push("</tr>");
         });
         return searchDOM;

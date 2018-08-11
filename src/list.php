@@ -14,7 +14,8 @@ $json = json_decode($api);
 foreach($json as $show=>$val) {
 	$array[$val->titleSlug]["title"] = $val->title;
 	$array[$val->titleSlug]["got"] = $val->episodeFileCount;
-	$array[$val->titleSlug]["total"] = $val->episodeCount;
+    $array[$val->titleSlug]["total"] = $val->episodeCount;
+    $array[$val->titleSlug]["imdbId"] = $val->imdbId;
 }
 $fp = fopen("/var/www/html/sonarr.json", "w+");
 fwrite($fp, json_encode($array));
@@ -29,7 +30,9 @@ $history = json_decode($api);
 foreach($json as $show=>$val) {
 	$title = str_replace(" ", "_", $val->sortTitle);
 	$array[$val->titleSlug]["title"] = $val->title;
-	$array[$val->titleSlug]["got"] = $val->hasFile;
+    $array[$val->titleSlug]["got"] = $val->hasFile;
+    $array[$val->titleSlug]["imdbId"] = $val->imdbId;
+    $array[$val->titleSlug["tmdbId"] = $val->tmdbId;
 	if($val->hasFile)
 	{
 		$array[$val->titleSlug]["quality"] = $val->movieFile->quality->quality->name;
