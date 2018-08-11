@@ -32,7 +32,7 @@ foreach($json as $show=>$val) {
 	$array[$val->titleSlug]["title"] = $val->title;
     $array[$val->titleSlug]["got"] = $val->hasFile;
     $array[$val->titleSlug]["imdbId"] = $val->imdbId;
-    $array[$val->titleSlug["tmdbId"] = $val->tmdbId;
+    $array[$val->titleSlug]["tmdbId"] = $val->tmdbId;
 	if($val->hasFile)
 	{
 		$array[$val->titleSlug]["quality"] = $val->movieFile->quality->quality->name;

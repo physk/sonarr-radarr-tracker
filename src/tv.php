@@ -88,33 +88,32 @@ foreach($json as $key=>$val)
 </head>
 
 <body>
+    <div class="container jumbotron">
+        <h1 style="text-align:center;">TV Shows</h1>
+        <div class="row">
+        <form action="#" method="get" style="width:100%">
+            <div class="input-group">
+            <input class="form-control" id="system-search" name="q" placeholder="Search for TV Show)" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+            </div>
+            </div>
+        </form>
+        </div><!-- end row -->
 
-<div class="container jumbotron">
-  <h1 style="text-align:center;">TV Shows</h1>
-<div class="row">
-  <form action="#" method="get" style="width:100%">
-    <div class="input-group">
-      <input class="form-control" id="system-search" name="q" placeholder="Search for TV Show)" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-      </div>
+        <div class="row">
+        <table class="table table-list-search table-striped table-hover table-dark" style="text-align:center;" id="content">
+            <thead>
+                <tr>
+                    <th style="width:35%;">Show Title</th>
+                    <th>Downloaded / Total</th>
+                    <th>Percent</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
     </div>
-  </form>
-</div><!-- end row -->
-
-<div class="row">
-  <table class="table table-list-search table-striped table-hover table-dark" style="text-align:center;" id="content">
-    <thead>
-        <tr>
-            <th style="width:35%;">Show Title</th>
-            <th>Downloaded / Total</th>
-            <th>Percent</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-</div>
-</div>
 </body>
 </html>

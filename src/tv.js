@@ -4,7 +4,7 @@ $(document).ready(function() {
         
         $.each( data.items, function( i, item ) {
             if(item.total >= 1){
-                var percent = (itam.got / item.total) * 100;
+                var percent = (item.got / item.total) * 100;
             } else {
                 var percent = 0;
             }
@@ -32,7 +32,7 @@ $(document).ready(function() {
         return searchDOM;
     };
     function initJSON( query ) {
-        $.getJSON("api.php", {type: "movies", "q": query})
+        $.getJSON("api.php", {type: "tv", "q": query})
         .done(function( data ) {
             if(data.return == true){
                 var domArray = parseData( data );
